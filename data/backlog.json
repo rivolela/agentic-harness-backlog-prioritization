@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Add dark mode",
+    "effort": "low",
+    "value": "high",
+    "type": "feature"
+  },
+  {
+    "id": 2,
+    "title": "Fix login timeout bug",
+    "effort": "medium",
+    "value": "high",
+    "type": "bug"
+  },
+  {
+    "id": 3,
+    "title": "Refactor payment API",
+    "effort": "high",
+    "value": "medium",
+    "type": "tech-debt"
+  },
+  {
+    "id": 4,
+    "title": "Build onboarding tutorial",
+    "effort": "medium",
+    "value": "high",
+    "type": "feature"
+  }
+]
