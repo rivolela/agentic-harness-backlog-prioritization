@@ -1,42 +1,72 @@
+
 # Agentic Harness for Backlog Prioritization
 
+## Table of Contents
+- [Agentic Harness for Backlog Prioritization](#agentic-harness-for-backlog-prioritization)
+  - [Table of Contents](#table-of-contents)
+  - [Goal](#goal)
+  - [Harnessing Agency: The Strategic Role of the Product Owner](#harnessing-agency-the-strategic-role-of-the-product-owner)
+    - [What is a Harness?](#what-is-a-harness)
+    - [Why It Matters](#why-it-matters)
+  - [Philosophical Foundation](#philosophical-foundation)
+      - [Core Principle](#core-principle)
+  - [Project Features](#project-features)
+  - [VSCode Environment Setup](#vscode-environment-setup)
+    - [Essential Extensions](#essential-extensions)
+    - [Prepare Your Tools](#prepare-your-tools)
+  - [Fetching Backlog Data](#fetching-backlog-data)
+  - [Automation Script](#automation-script)
+    - [Orchestration](#orchestration)
+    - [Guardrails](#guardrails)
+    - [UX](#ux)
+    - [AI's Role](#ais-role)
+      - [Workflow Diagram](#workflow-diagram)
+  - [Human-in-the-loop Review](#human-in-the-loop-review)
+  - [Repeat, Iterate, and Audit](#repeat-iterate-and-audit)
+  - [Project Structure](#project-structure)
+  - [Roadmap](#roadmap)
+  - [Conclusion](#conclusion)
+  - [Contributing](#contributing)
+  - [Getting Started](#getting-started)
+  - [License](#license)
+
+---
 
 ## Goal
 Automate backlog prioritization with AI suggestions while keeping human ownership—combining workflow automation, traceability, and human-in-the-loop decision-making.
 
-## Harnessing Agency: The Strategic Role of the Product Owner in the Architecture of AI Agents
+---
+
+## Harnessing Agency: The Strategic Role of the Product Owner
 
 ### What is a Harness?
 In AI product development, the model is not the product—the harness is.
 
 A harness is the architecture that wraps around an AI model and makes it useful, safe, and valuable. It includes:
-
 - 🔧 **Tools** — What the agent can access (APIs, databases, email, Discord, slides)
 - 🔄 **Orchestration** — How the agent plans, executes, and iterates
 - 🛡️ **Guardrails** — What the agent cannot do (permissions, limits, escalation rules)
 - 🖥️ **UX** — How humans see, understand, and override the agent's work
 
 ### Why It Matters
-
 The same AI model can power a simple chatbot or a sophisticated research assistant. The difference? The harness.
 
 As a Product Owner, your job is not to build the model. Your job is to design the harness—deciding what tools the agent gets, what workflows it follows, what limits it respects, and where the human stays in control.
 
-### 🏛️ Philosophical Foundation
+---
+
+## Philosophical Foundation
 This project is grounded in the FilósofoTech framework:
-
-- **Vital Reason (Ortega y Gasset)**: Rationality is not abstract—it is
-situated in the living context of the person who decides.
-
-- **Style (Granger)**: AI masters structure, but only the human masters
-the singular style of each decision.\
+- **Vital Reason (Ortega y Gasset)**: Rationality is not abstract—it is situated in the living context of the person who decides.
+- **Style (Granger)**: AI masters structure, but only the human masters the singular style of each decision.
 
 #### Core Principle
 - AI structures. The human decides.
 - The PO who masters the harness doesn't compete with AI—they command it.
 
+---
 
-### What's Inside:
+## Project Features
 - Clear definition of harness in product terms
 - Real-world examples (chatbots, research assistants, backlog prioritization)
 - Step-by-step tutorial with Python automation
@@ -45,8 +75,7 @@ the singular style of each decision.\
 
 ---
 
-## 1. Set Up Your VSCode Environment
-
+## VSCode Environment Setup
 ### Essential Extensions
 - **Jira/Atlassian Extension** (if your backlog is in Jira): Atlassian VSCode
 - **REST Client**: Run API calls from VSCode
@@ -57,48 +86,49 @@ the singular style of each decision.\
 - An account on OpenAI, Anthropic, Gemini, or another LLM provider (or a local model)
 - Python (recommended for scripting)
 
+---
 
-## 2. Fetch Your Backlog Data
+## Fetching Backlog Data
 - **Option 1**: Export your ticket list from Jira/Notion as CSV/JSON.
 - **Option 2**: Use REST Client and the appropriate API to pull backlog items directly into VSCode.
 
+---
 
-## 3. Write an Automation Script (Python Example)
-
+## Automation Script
 ### Orchestration
 - Load items → Send to LLM → Get ranked list → Save output
-
 ### Guardrails
 - Read-only input, output is a suggestion file, no auto-commit
-
 ### UX
 - Markdown file with ranked backlog + rationale
-
 ### AI's Role
 - Rank and explain; human reviews and decides
 
 #### Workflow Diagram
 ```
 data/backlog.json ──→ src/prioritize_backlog.py ──→ Gemini API ──→ docs/prioritized_backlog.md
-	(Tool)              (Orchestration)             (Tool)         (UX: Markdown output)
-																						 │
-																	Guardrail: Suggestion only
-																	Human: Reviews and decides
+   (Tool)              (Orchestration)             (Tool)         (UX: Markdown output)
+                                                                   │
+                                                   Guardrail: Suggestion only
+                                                   Human: Reviews and decides
 ```
 
+---
 
-## 4. Review & Override: The Human-in-the-loop
+## Human-in-the-loop Review
 - Check the prioritized_backlog.md with Markdown Preview Enhanced in VSCode.
 - Accept, reject, or change the suggested order and rationales.
 - Document any overrides or comments directly in the markdown file—making your decision process explicit (reflecting “situated agency”).
 
+---
 
-## 5. Repeat, Iterate, and Audit
+## Repeat, Iterate, and Audit
 - Whenever the backlog changes, fetch new data and rerun the script.
 - Maintain all versions in your repo (with Git): this provides full traceability (audit trail) of both AI and human prioritization decisions.
 
+---
 
-## 6. Project Structure
+## Project Structure
 ```
 agentic-harness-backlog-prioritization/
 ├── README.md
@@ -112,35 +142,37 @@ agentic-harness-backlog-prioritization/
 │   └── prioritized_backlog.md
 ```
 
+---
 
-## 🗺️ 7.Roadmap
+## Roadmap
+- [x] Basic Python script with OpenAI API
+- [x] Sample backlog data
+- [x] Markdown output with rationale
+- [ ] Jira API integration
+- [ ] Discord bot for team feedback
+- [ ] Interactive dashboard (Streamlit)
+- [ ] Presentation auto-export
+- [ ] Multi-criteria scoring model (configurable weights)
+- [ ] Audit trail with override logging
 
-[x] Basic Python script with OpenAI API
-[x] Sample backlog data
-[x] Markdown output with rationale
-[ ] Jira API integration
-[ ] Discord bot for team feedback
-[ ] Interactive dashboard (Streamlit)
-[ ] Presentation auto-export
-[ ] Multi-criteria scoring model (configurable weights)
-[ ] Audit trail with override logging
+---
 
-
-## 8. Conclusion: The PO as the Architect of Agency
+## Conclusion
 The age of AI agents does not diminish the Product Owner—it elevates the role.
 
 Every AI agent, no matter how powerful, operates within a harness: a set of tools, workflows, guardrails, and interfaces that someone must design, configure, and govern. That someone is the PO.
 
+---
 
-## 🤝 Contributing
+## Contributing
 Contributions are welcome! If you want to expand the harness or add new integrations:
+1. Fork the repo
+2. Create your feature branch (`git checkout -b feature/new-tool`)
+3. Commit your changes (`git commit -m 'Add new tool integration'`)
+4. Push to the branch (`git push origin feature/new-tool`)
+5. Open a Pull Request
 
-Fork the repo
-Create your feature branch (git checkout -b feature/new-tool)
-Commit your changes (git commit -m 'Add new tool integration')
-Push to the branch (git push origin feature/new-tool)
-Open a Pull Request
-z
+---
 
 ## Getting Started
 1. Clone the repo and install dependencies (`pip install -r requirements.txt`).
