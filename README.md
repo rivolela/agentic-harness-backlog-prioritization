@@ -22,9 +22,19 @@ The same AI model can power a simple chatbot or a sophisticated research assista
 
 As a Product Owner, your job is not to build the model. Your job is to design the harness—deciding what tools the agent gets, what workflows it follows, what limits it respects, and where the human stays in control.
 
-### Core Principle
+### 🏛️ Philosophical Foundation
+This project is grounded in the FilósofoTech framework:
+
+- **Vital Reason (Ortega y Gasset)**: Rationality is not abstract—it is
+situated in the living context of the person who decides.
+
+- **Style (Granger)**: AI masters structure, but only the human masters
+the singular style of each decision.\
+
+#### Core Principle
 - AI structures. The human decides.
 - The PO who masters the harness doesn't compete with AI—they command it.
+
 
 ### What's Inside:
 - Clear definition of harness in product terms
@@ -103,12 +113,34 @@ agentic-harness-backlog-prioritization/
 ```
 
 
-## 7. Conclusion: The PO as the Architect of Agency
+## 🗺️ 7.Roadmap
+
+[x] Basic Python script with OpenAI API
+[x] Sample backlog data
+[x] Markdown output with rationale
+[ ] Jira API integration
+[ ] Discord bot for team feedback
+[ ] Interactive dashboard (Streamlit)
+[ ] Presentation auto-export
+[ ] Multi-criteria scoring model (configurable weights)
+[ ] Audit trail with override logging
+
+
+## 8. Conclusion: The PO as the Architect of Agency
 The age of AI agents does not diminish the Product Owner—it elevates the role.
 
 Every AI agent, no matter how powerful, operates within a harness: a set of tools, workflows, guardrails, and interfaces that someone must design, configure, and govern. That someone is the PO.
 
 
+## 🤝 Contributing
+Contributions are welcome! If you want to expand the harness or add new integrations:
+
+Fork the repo
+Create your feature branch (git checkout -b feature/new-tool)
+Commit your changes (git commit -m 'Add new tool integration')
+Push to the branch (git push origin feature/new-tool)
+Open a Pull Request
+z
 
 ## Getting Started
 1. Clone the repo and install dependencies (`pip install -r requirements.txt`).
