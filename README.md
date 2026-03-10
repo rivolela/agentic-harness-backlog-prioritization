@@ -16,6 +16,7 @@
     - [Prepare Your Tools](#prepare-your-tools)
   - [6. Fetching Backlog Data](#6-fetching-backlog-data)
   - [7. Automation Script](#7-automation-script)
+    - [Tools Used](#tools-used)
     - [Orchestration](#orchestration)
     - [Guardrails](#guardrails)
     - [UX](#ux)
@@ -95,22 +96,31 @@ This project is grounded in the FilósofoTech framework:
 ---
 
 ## 7. Automation Script
+
+### Tools Used
+- **data/backlog.json**: Local file to store backlog data.
+- **Gemini API**: Google’s generative AI for ranking backlog items.
+- **Jira/Atlassian Extension** (optional): For fetching backlog data from Jira.
+
 ### Orchestration
 - Load items → Send to LLM → Get ranked list → Save output
+
 ### Guardrails
 - Read-only input, output is a suggestion file, no auto-commit
+
 ### UX
 - Markdown file with ranked backlog + rationale
+
 ### AI's Role
 - Rank and explain; human reviews and decides
 
 #### Workflow Diagram
 ```
 data/backlog.json ──→ src/prioritize_backlog.py ──→ Gemini API ──→ docs/prioritized_backlog.md
-   (Tool)              (Orchestration)             (Tool)         (UX: Markdown output)
-                                                                   │
-                                                   Guardrail: Suggestion only
-                                                   Human: Reviews and decides
+  (Tool)              (Orchestration)               (Tool)         (UX: Markdown output)
+                                             │
+                                  Guardrail: Suggestion only
+                                  Human: Reviews and decides
 ```
 
 ---
